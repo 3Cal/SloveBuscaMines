@@ -1,0 +1,57 @@
+strtol: 581527301884235016
+char *m = "0812000000004d08";
+
+	b[0] = strtol ( m, NULL, 16 );
+element 0: 8		08
+element 1: 77		4D
+element 2: 0		00
+element 3: 0		00
+element 4: 0		00
+element 5: 0		00
+element 6: 18		12
+element 7: 8		08
+
+element 8: 3
+element 9: 0
+element 10: 0
+element 11: 0
+element 12: 0
+element 13: 0
+element 14: 0
+element 15: 0
+element 16: 224
+element 17: 179
+element 18: 18
+element 19: 160
+element 20: 0
+element 21: 0
+element 22: 0
+element 23: 0
+element 24: 64
+element 25: 180
+element 26: 18
+element 27: 160
+element 28: 255
+element 29: 127
+element 30: 0
+element 31: 0
+element 32: 0
+element 33: 0
+element 34: 0
+element 35: 0
+element 36: 0
+element 37: 0
+element 38: 0
+element 39: 0
+element 40: 0
+element 41: 0
+element 42: 0
+element 43: 0
+element 44: 0
+element 45: 0
+element 46: 0
+element 47: 0
+element 48: 8
+element 49: 180
+element 50: 18
+

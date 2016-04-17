@@ -5,6 +5,6 @@
  2	Error status /Input is not correct/
  30	Error pipe
 */
-int input ( char * );
+unsigned int input ( char * );
 
 #endif /* _INPUT_H */

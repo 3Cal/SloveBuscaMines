@@ -9,7 +9,7 @@
 void ShowMine ( m )
 	char *m;
 {
-	int i;
+	unsigned int i;
 	char show = 0;
 	for ( i = 0; i < MatrixSize; i++ )
 	{
@@ -32,6 +32,7 @@ void ShowMine ( m )
 int parser ( in )
 	char * in;
 {
+	unsigned int i;
 	cx = atoi ( in ); /* definim el primer valor */
 	in = strchr ( in, 'x') + 1;
 	MatrixSize = atoi ( in ) * cx; /* definim el tamany total */
@@ -43,11 +44,14 @@ int parser ( in )
 
 	realMatrix = ( char * ) malloc ( (int) (ceil (MatrixSize/8.)));
 printf ( "len: %d - byts: %d\n", strlen (in), (int) ceil (MatrixSize/8.));
-	realMatrix = strtol ( in, NULL, 16 );
+	realMatrix[8] = strtol ( in, NULL, 16 );
 
 /* Fals, ja que aixo no es el valor, sino el string... */
-	realMatrix = in; /* Ja tenim la matriu real ;) */
+	for (i = 0; i < 10; i++)
+		printf ( "Valor %d: %u", i, realMatrix[i]);
 
+	printf ("long int: %d", sizeof (long int));
+	printf ("Real valor: %s\n", in);
 	printf ("Digit: %ld\n", strtol ( in, NULL, 16) );
 
 	printf ( "First: %d\n", cx );

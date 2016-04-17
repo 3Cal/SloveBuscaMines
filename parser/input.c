@@ -8,18 +8,16 @@
 int input ( in )
 	char * in;
 {
-	int pid;
 	int fd[2]; /* file descriptor */
 	if ( pipe (fd) ) return 30; /* Error pipe */
-	pid = fork ();
-	if ( pid )
+	if ( fork () )
 	{ /* parent */
 		int status;
 		wait (&status);
 		if ( status ) return 2; /* Error entrada */
 		read (fd[0], in, strlen (in) );
 		if (strchr (in, 'm')) /* A repetir l'operacio com tontets jajaja */
-			input ( in );
+			return input ( in );
 		return parser ( in ); /* Passem tota la responsablitat a aquest */
 	} else
 	{ /* child */

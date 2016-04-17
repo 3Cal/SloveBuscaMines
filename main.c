@@ -11,7 +11,7 @@
 
 int main ( int argc, char * argv [] )
 {
-	int status;
+	unsigned int status;
 	if ( argc == 2 )
 		status = input ( argv[1] );
 	else return 1;
