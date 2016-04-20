@@ -2,21 +2,9 @@
 #include <stdlib.h> /* atoi */
 #include <string.h> /* strchr */
 
-#include "../gloval/variables.h" /* MINE, MINES */
-#include "../gloval/mines.h" /* GeneralRound */
+#include "../global/variables.h" /* MINE, MINES, realMatrix */
+#include "../global/mines.h" /* GeneralRound, for debug: ShowRealMatrix */
 
-
-void ShowMine ( m )
-	char *m;
-{
-	int i;
-	for ( i = 0; i < MatrixSize; i++ )
-	{
-		if ( (i % cx) == 0 ) printf ("\n");
-		printf ( "%d", realMatrix[i]);
-	}
-	printf ( "\n" );
-}
 
 void  addOne ( i )
 	int i;
@@ -61,16 +49,15 @@ int parser ( in )
 {
 	unsigned int i;
 	cx = atoi ( in ); /* definim el primer valor */
-	in = strchr ( in, 'x') + 1;
+in = strchr ( in, 'x') + 1;
 	MatrixSize = atoi ( in ) * cx; /* definim el tamany total */
-	in = strchr ( in, ':') + 1;
+in = strchr ( in, ':') + 1;
 	begin = atoi ( in );
-	in = strchr ( in, ',') + 1;
+in = strchr ( in, ',') + 1;
 	begin += atoi ( in ) * cx; /* diem on comenzem */
-	in = strchr ( in, 'u') + 1;
+in = strchr ( in, 'u') + 1;
 
 	realMatrix = ( char * ) malloc ( MatrixSize );
-	realMatrix[8] = strtol ( in, NULL, 16 );
 
 	GenerateRealMatrix ( in );
 
@@ -81,8 +68,9 @@ int parser ( in )
 	printf ( "First: %d\n", cx );
 	printf ( "Total: %d\n", MatrixSize);
 	printf ( "Begin: %d\n", begin);
+	printf ( "Mines: %d", MINES );
 
-	ShowMine ( realMatrix );
+	ShowRealMatrix ();
 
 return 0;
 }
